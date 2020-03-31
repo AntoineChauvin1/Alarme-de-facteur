@@ -1,0 +1,29 @@
+#include <ESP8266WiFi.h>
+
+#define BLYNK_PRINT Serial  
+
+#include <BlynkSimpleEsp8266.h>
+
+char auth[] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+
+/* WiFi credentials */
+char ssid[] = "UPC7C77516";
+char pass[] = "xxxxxxxxxx";
+
+void setup()
+{
+  Serial.begin(115200);
+  delay(10);
+  Blynk.begin(auth, ssid, pass);
+  Blynk.run();
+  Blynk.notify("Le facteur est passé!"); 
+   delay(5000); 
+  
+}
+
+void loop()
+{
+   Blynk.run();
+   
+
+}
